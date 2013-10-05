@@ -17,10 +17,9 @@
     [super viewDidLoad];
     
     [self setViewControllers:@[
-                               [[UINavigationController alloc] initWithRootViewController:[PVMyShowsViewController new]],
-                               [[UINavigationController alloc] initWithRootViewController:[PVAllShowsViewController new]]
+                              [[UINavigationController alloc] initWithRootViewController:[PVAllShowsViewController new]],
+                               [[UINavigationController alloc] initWithRootViewController:[PVMyShowsViewController new]]
                                ]];
-    
 }
 
 @end

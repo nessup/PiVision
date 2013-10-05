@@ -13,7 +13,13 @@
 
 @implementation PVTableViewController
 
+- (void)loadView {
+    [super loadView];
+    self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+}
+
 - (void)viewDidLoad {
+    [super viewDidLoad];
     [self.view addSubview:self.tableView];
 }
 
@@ -28,6 +34,7 @@
         CGPointZero,
         self.view.frame.size
     };
+    _tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     
     return _tableView;
 }

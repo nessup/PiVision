@@ -23,6 +23,12 @@
 		3BF71B661800989500A8FDFA /* PVMyShowsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B651800989500A8FDFA /* PVMyShowsViewController.m */; };
 		3BF71B69180098B300A8FDFA /* PVAllShowsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B68180098B300A8FDFA /* PVAllShowsViewController.m */; };
 		3BF71B6C1800993D00A8FDFA /* PVTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B6B1800993D00A8FDFA /* PVTableViewController.m */; };
+		3BF71B7B1800A93D00A8FDFA /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B741800A93D00A8FDFA /* UIColor+HexString.m */; };
+		3BF71B7C1800A93D00A8FDFA /* NSTimer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B761800A93D00A8FDFA /* NSTimer+Blocks.m */; };
+		3BF71B7D1800A93D00A8FDFA /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B781800A93D00A8FDFA /* UIView+Layout.m */; };
+		3BF71B7E1800A93D00A8FDFA /* UIAlertView+MKBlockAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B7A1800A93D00A8FDFA /* UIAlertView+MKBlockAdditions.m */; };
+		3BF71B811800AC8500A8FDFA /* PVSegmentedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B801800AC8500A8FDFA /* PVSegmentedViewController.m */; };
+		3BF71B841800B8C900A8FDFA /* PVSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B831800B8C900A8FDFA /* PVSegmentedControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +66,18 @@
 		3BF71B68180098B300A8FDFA /* PVAllShowsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVAllShowsViewController.m; sourceTree = "<group>"; };
 		3BF71B6A1800993D00A8FDFA /* PVTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVTableViewController.h; sourceTree = "<group>"; };
 		3BF71B6B1800993D00A8FDFA /* PVTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVTableViewController.m; sourceTree = "<group>"; };
+		3BF71B731800A93D00A8FDFA /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
+		3BF71B741800A93D00A8FDFA /* UIColor+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexString.m"; sourceTree = "<group>"; };
+		3BF71B751800A93D00A8FDFA /* NSTimer+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Blocks.h"; sourceTree = "<group>"; };
+		3BF71B761800A93D00A8FDFA /* NSTimer+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Blocks.m"; sourceTree = "<group>"; };
+		3BF71B771800A93D00A8FDFA /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
+		3BF71B781800A93D00A8FDFA /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
+		3BF71B791800A93D00A8FDFA /* UIAlertView+MKBlockAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+MKBlockAdditions.h"; sourceTree = "<group>"; };
+		3BF71B7A1800A93D00A8FDFA /* UIAlertView+MKBlockAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+MKBlockAdditions.m"; sourceTree = "<group>"; };
+		3BF71B7F1800AC8500A8FDFA /* PVSegmentedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVSegmentedViewController.h; sourceTree = "<group>"; };
+		3BF71B801800AC8500A8FDFA /* PVSegmentedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVSegmentedViewController.m; sourceTree = "<group>"; };
+		3BF71B821800B8C900A8FDFA /* PVSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVSegmentedControl.h; sourceTree = "<group>"; };
+		3BF71B831800B8C900A8FDFA /* PVSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVSegmentedControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,14 +139,9 @@
 			children = (
 				3BF71B381800978900A8FDFA /* PVAppDelegate.h */,
 				3BF71B391800978900A8FDFA /* PVAppDelegate.m */,
-				3BF71B61180097EF00A8FDFA /* PVTabBarController.h */,
-				3BF71B62180097EF00A8FDFA /* PVTabBarController.m */,
-				3BF71B6A1800993D00A8FDFA /* PVTableViewController.h */,
-				3BF71B6B1800993D00A8FDFA /* PVTableViewController.m */,
-				3BF71B641800989500A8FDFA /* PVMyShowsViewController.h */,
-				3BF71B651800989500A8FDFA /* PVMyShowsViewController.m */,
-				3BF71B67180098B300A8FDFA /* PVAllShowsViewController.h */,
-				3BF71B68180098B300A8FDFA /* PVAllShowsViewController.m */,
+				3BF71B721800A91C00A8FDFA /* Categories */,
+				3BF71B6E1800A7FF00A8FDFA /* View */,
+				3BF71B6D1800A7F600A8FDFA /* Controller */,
 				3BF71B441800978900A8FDFA /* Images.xcassets */,
 				3BF71B301800978900A8FDFA /* Supporting Files */,
 			);
@@ -162,6 +175,47 @@
 				3BF71B541800978900A8FDFA /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3BF71B6D1800A7F600A8FDFA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3BF71B61180097EF00A8FDFA /* PVTabBarController.h */,
+				3BF71B62180097EF00A8FDFA /* PVTabBarController.m */,
+				3BF71B7F1800AC8500A8FDFA /* PVSegmentedViewController.h */,
+				3BF71B801800AC8500A8FDFA /* PVSegmentedViewController.m */,
+				3BF71B6A1800993D00A8FDFA /* PVTableViewController.h */,
+				3BF71B6B1800993D00A8FDFA /* PVTableViewController.m */,
+				3BF71B67180098B300A8FDFA /* PVAllShowsViewController.h */,
+				3BF71B68180098B300A8FDFA /* PVAllShowsViewController.m */,
+				3BF71B641800989500A8FDFA /* PVMyShowsViewController.h */,
+				3BF71B651800989500A8FDFA /* PVMyShowsViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		3BF71B6E1800A7FF00A8FDFA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3BF71B821800B8C900A8FDFA /* PVSegmentedControl.h */,
+				3BF71B831800B8C900A8FDFA /* PVSegmentedControl.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		3BF71B721800A91C00A8FDFA /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				3BF71B731800A93D00A8FDFA /* UIColor+HexString.h */,
+				3BF71B741800A93D00A8FDFA /* UIColor+HexString.m */,
+				3BF71B751800A93D00A8FDFA /* NSTimer+Blocks.h */,
+				3BF71B761800A93D00A8FDFA /* NSTimer+Blocks.m */,
+				3BF71B771800A93D00A8FDFA /* UIView+Layout.h */,
+				3BF71B781800A93D00A8FDFA /* UIView+Layout.m */,
+				3BF71B791800A93D00A8FDFA /* UIAlertView+MKBlockAdditions.h */,
+				3BF71B7A1800A93D00A8FDFA /* UIAlertView+MKBlockAdditions.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,9 +317,15 @@
 			files = (
 				3BF71B3A1800978900A8FDFA /* PVAppDelegate.m in Sources */,
 				3BF71B6C1800993D00A8FDFA /* PVTableViewController.m in Sources */,
+				3BF71B811800AC8500A8FDFA /* PVSegmentedViewController.m in Sources */,
+				3BF71B7B1800A93D00A8FDFA /* UIColor+HexString.m in Sources */,
+				3BF71B7C1800A93D00A8FDFA /* NSTimer+Blocks.m in Sources */,
+				3BF71B7E1800A93D00A8FDFA /* UIAlertView+MKBlockAdditions.m in Sources */,
 				3BF71B361800978900A8FDFA /* main.m in Sources */,
 				3BF71B69180098B300A8FDFA /* PVAllShowsViewController.m in Sources */,
 				3BF71B63180097EF00A8FDFA /* PVTabBarController.m in Sources */,
+				3BF71B7D1800A93D00A8FDFA /* UIView+Layout.m in Sources */,
+				3BF71B841800B8C900A8FDFA /* PVSegmentedControl.m in Sources */,
 				3BF71B661800989500A8FDFA /* PVMyShowsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

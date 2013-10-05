@@ -13,4 +13,9 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+
+#import "UIColor+HexString.h"
+#import "NSTimer+Blocks.h"
+#import "UIView+Layout.h"
+#import "UIAlertView+MKBlockAdditions.h"
 #endif

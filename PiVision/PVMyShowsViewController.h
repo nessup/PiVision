@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 PiVision. All rights reserved.
 //
 
-#import "PVTableViewController.h"
+#import "PVSegmentedViewController.h"
 
-@interface PVMyShowsViewController : PVTableViewController
+@interface PVMyShowsViewController : PVSegmentedViewController
 
 @end
