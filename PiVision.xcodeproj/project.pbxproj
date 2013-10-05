@@ -13,15 +13,16 @@
 		3BF71B341800978900A8FDFA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3BF71B321800978900A8FDFA /* InfoPlist.strings */; };
 		3BF71B361800978900A8FDFA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B351800978900A8FDFA /* main.m */; };
 		3BF71B3A1800978900A8FDFA /* PVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B391800978900A8FDFA /* PVAppDelegate.m */; };
-		3BF71B3D1800978900A8FDFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BF71B3B1800978900A8FDFA /* Main.storyboard */; };
-		3BF71B401800978900A8FDFA /* PVFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B3F1800978900A8FDFA /* PVFirstViewController.m */; };
-		3BF71B431800978900A8FDFA /* PVSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B421800978900A8FDFA /* PVSecondViewController.m */; };
 		3BF71B451800978900A8FDFA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BF71B441800978900A8FDFA /* Images.xcassets */; };
 		3BF71B4C1800978900A8FDFA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BF71B4B1800978900A8FDFA /* XCTest.framework */; };
 		3BF71B4D1800978900A8FDFA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BF71B291800978900A8FDFA /* Foundation.framework */; };
 		3BF71B4E1800978900A8FDFA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BF71B2D1800978900A8FDFA /* UIKit.framework */; };
 		3BF71B561800978900A8FDFA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3BF71B541800978900A8FDFA /* InfoPlist.strings */; };
 		3BF71B581800978900A8FDFA /* PiVisionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B571800978900A8FDFA /* PiVisionTests.m */; };
+		3BF71B63180097EF00A8FDFA /* PVTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B62180097EF00A8FDFA /* PVTabBarController.m */; };
+		3BF71B661800989500A8FDFA /* PVMyShowsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B651800989500A8FDFA /* PVMyShowsViewController.m */; };
+		3BF71B69180098B300A8FDFA /* PVAllShowsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B68180098B300A8FDFA /* PVAllShowsViewController.m */; };
+		3BF71B6C1800993D00A8FDFA /* PVTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B6B1800993D00A8FDFA /* PVTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,17 +46,20 @@
 		3BF71B371800978900A8FDFA /* PiVision-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PiVision-Prefix.pch"; sourceTree = "<group>"; };
 		3BF71B381800978900A8FDFA /* PVAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PVAppDelegate.h; sourceTree = "<group>"; };
 		3BF71B391800978900A8FDFA /* PVAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PVAppDelegate.m; sourceTree = "<group>"; };
-		3BF71B3C1800978900A8FDFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3BF71B3E1800978900A8FDFA /* PVFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PVFirstViewController.h; sourceTree = "<group>"; };
-		3BF71B3F1800978900A8FDFA /* PVFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PVFirstViewController.m; sourceTree = "<group>"; };
-		3BF71B411800978900A8FDFA /* PVSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PVSecondViewController.h; sourceTree = "<group>"; };
-		3BF71B421800978900A8FDFA /* PVSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PVSecondViewController.m; sourceTree = "<group>"; };
 		3BF71B441800978900A8FDFA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3BF71B4A1800978900A8FDFA /* PiVisionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PiVisionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BF71B4B1800978900A8FDFA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		3BF71B531800978900A8FDFA /* PiVisionTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PiVisionTests-Info.plist"; sourceTree = "<group>"; };
 		3BF71B551800978900A8FDFA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3BF71B571800978900A8FDFA /* PiVisionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PiVisionTests.m; sourceTree = "<group>"; };
+		3BF71B61180097EF00A8FDFA /* PVTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVTabBarController.h; sourceTree = "<group>"; };
+		3BF71B62180097EF00A8FDFA /* PVTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVTabBarController.m; sourceTree = "<group>"; };
+		3BF71B641800989500A8FDFA /* PVMyShowsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVMyShowsViewController.h; sourceTree = "<group>"; };
+		3BF71B651800989500A8FDFA /* PVMyShowsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVMyShowsViewController.m; sourceTree = "<group>"; };
+		3BF71B67180098B300A8FDFA /* PVAllShowsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVAllShowsViewController.h; sourceTree = "<group>"; };
+		3BF71B68180098B300A8FDFA /* PVAllShowsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVAllShowsViewController.m; sourceTree = "<group>"; };
+		3BF71B6A1800993D00A8FDFA /* PVTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVTableViewController.h; sourceTree = "<group>"; };
+		3BF71B6B1800993D00A8FDFA /* PVTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,11 +121,14 @@
 			children = (
 				3BF71B381800978900A8FDFA /* PVAppDelegate.h */,
 				3BF71B391800978900A8FDFA /* PVAppDelegate.m */,
-				3BF71B3B1800978900A8FDFA /* Main.storyboard */,
-				3BF71B3E1800978900A8FDFA /* PVFirstViewController.h */,
-				3BF71B3F1800978900A8FDFA /* PVFirstViewController.m */,
-				3BF71B411800978900A8FDFA /* PVSecondViewController.h */,
-				3BF71B421800978900A8FDFA /* PVSecondViewController.m */,
+				3BF71B61180097EF00A8FDFA /* PVTabBarController.h */,
+				3BF71B62180097EF00A8FDFA /* PVTabBarController.m */,
+				3BF71B6A1800993D00A8FDFA /* PVTableViewController.h */,
+				3BF71B6B1800993D00A8FDFA /* PVTableViewController.m */,
+				3BF71B641800989500A8FDFA /* PVMyShowsViewController.h */,
+				3BF71B651800989500A8FDFA /* PVMyShowsViewController.m */,
+				3BF71B67180098B300A8FDFA /* PVAllShowsViewController.h */,
+				3BF71B68180098B300A8FDFA /* PVAllShowsViewController.m */,
 				3BF71B441800978900A8FDFA /* Images.xcassets */,
 				3BF71B301800978900A8FDFA /* Supporting Files */,
 			);
@@ -236,7 +243,6 @@
 			files = (
 				3BF71B451800978900A8FDFA /* Images.xcassets in Resources */,
 				3BF71B341800978900A8FDFA /* InfoPlist.strings in Resources */,
-				3BF71B3D1800978900A8FDFA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,10 +261,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BF71B431800978900A8FDFA /* PVSecondViewController.m in Sources */,
-				3BF71B401800978900A8FDFA /* PVFirstViewController.m in Sources */,
 				3BF71B3A1800978900A8FDFA /* PVAppDelegate.m in Sources */,
+				3BF71B6C1800993D00A8FDFA /* PVTableViewController.m in Sources */,
 				3BF71B361800978900A8FDFA /* main.m in Sources */,
+				3BF71B69180098B300A8FDFA /* PVAllShowsViewController.m in Sources */,
+				3BF71B63180097EF00A8FDFA /* PVTabBarController.m in Sources */,
+				3BF71B661800989500A8FDFA /* PVMyShowsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,14 +295,6 @@
 				3BF71B331800978900A8FDFA /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		3BF71B3B1800978900A8FDFA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3BF71B3C1800978900A8FDFA /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		3BF71B541800978900A8FDFA /* InfoPlist.strings */ = {

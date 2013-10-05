@@ -1,5 +1,5 @@
 //
-//  PVFirstViewController.h
+//  PVTabBarController.h
 //  PiVision
 //
 //  Created by Dany on 10/5/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PVFirstViewController : UIViewController
+@interface PVTabBarController : UITabBarController
 
 @end
