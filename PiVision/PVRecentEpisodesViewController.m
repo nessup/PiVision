@@ -32,6 +32,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     PVEpisodeViewController *controller = [PVEpisodeViewController new];
     controller.episode = [PVEpisode generateTestEpisode];
     [self.navigationController pushViewController:controller animated:YES];
