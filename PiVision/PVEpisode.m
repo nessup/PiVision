@@ -27,8 +27,7 @@
             e.startTime = runningTime;
             e.endTime = runningTime + 1800;
             runningTime += 1800;
-            e.channel = i;
-            e.channelName = @"ABC";
+            e.channelNumber = [NSString stringWithFormat:@"%d", i];
             e.programName = @"Glee";
             [episodes addObject:e];
             
@@ -41,8 +40,7 @@
             e.startTime = runningTime;
             e.endTime = runningTime + 1800;
             runningTime += 1800;
-            e.channel = i;
-            e.channelName = @"ABC";
+            e.channelNumber = [NSString stringWithFormat:@"%d", i];
             e.programName = @"Glee";
             [episodes addObject:e];
         }
@@ -53,8 +51,7 @@
             e.startTime = runningTime;
             e.endTime = runningTime + 3600;
             runningTime += 3600;
-            e.channel = i;
-            e.channelName = @"ABC";
+            e.channelNumber = [NSString stringWithFormat:@"%d", i];
             e.programName = @"Glee";
             [episodes addObject:e];
         }
@@ -65,8 +62,7 @@
             e.startTime = runningTime;
             e.endTime = runningTime + 1800;
             runningTime += 1800;
-            e.channel = i;
-            e.channelName = @"ABC";
+            e.channelNumber = [NSString stringWithFormat:@"%d", i];
             e.programName = @"Glee";
             [episodes addObject:e];
         }
@@ -84,8 +80,7 @@
         e.startTime = runningTime;
         e.endTime = runningTime + 1800;
         runningTime += 1800;
-        e.channel = 2;
-        e.channelName = @"ABC";
+        e.channelNumber = [NSString stringWithFormat:@"%d", 2];
         e.programName = @"Glee";
         return e;
     }

@@ -8,6 +8,7 @@
 
 #import "PVGridViewController.h"
 
+#import "PVRoviManager.h"
 #import "PVEpisode.h"
 #import "PVGridCell.h"
 #import "PVEpisodeGridLayout.h"
@@ -19,18 +20,16 @@
 @interface PVGridViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) PVEpisodeGridLayout *gridLayout;
-@property (nonatomic, strong) NSArray *channels;
 @end
 
 @implementation PVGridViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        _channels = [PVEpisode generateTestChannels];
+        [[PVRoviManager sharedManager] addObserver:self forKeyPath:@"channels" options:NSKeyValueObservingOptionNew context:nil];
     }
     return self;
 }
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -46,6 +45,24 @@
             self.collectionView.contentOffset.y
         };
     }];
+}
+
+- (void)dealloc {
+    [[PVRoviManager sharedManager] removeObserver:self forKeyPath:@"channels"];
+}
+
+#pragma mark - Channels
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"channels"]) {
+        [self.collectionView reloadData];
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+}
+
+- (NSArray *)channels {
+    return [[PVRoviManager sharedManager] channels];
 }
 
 #pragma mark - Collection view
@@ -79,11 +96,11 @@
 
 // This is useless for PVEpisodeGridLayout.
 - (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView {
-    return [self numberOfChannels];
+    return [self numberOfChannels] ?: 1;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
-    return [self.channels[section] count];
+    return [[self.channels[section] episodes] count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -130,19 +147,21 @@
 }
 
 - (PVEpisode *)episodeAtIndexPath:(NSIndexPath *)indexPath {
-    return self.channels[indexPath.section][indexPath.item];
+    return [self.channels[indexPath.section] episodes][indexPath.item];
 }
 
 - (NSArray *)indexPathsOfEpisodesBetweenMinChannel:(NSInteger)minChannel maxChannel:(NSInteger)maxChannel minStartTime:(NSTimeInterval)minStartTime maxEndTime:(NSTimeInterval)maxEndTime {
     NSMutableArray *indexPaths = [NSMutableArray new];
     
     // This is inefficient -- we should be using a for loop here.
-    for (NSArray *episodes in self.channels) {
-        for (PVEpisode *episode in episodes) {
-            if (episode.channel < minChannel)
+    for (PVChannel *channel in self.channels) {
+        NSInteger channelIndex = [self.channels indexOfObject:channel];
+        
+        for (PVEpisode *episode in channel.episodes) {
+            if (channelIndex < minChannel)
                 continue;
             
-            if (episode.channel > maxChannel)
+            if (channelIndex > maxChannel)
                 continue;
             
             if (episode.indexedStartTime < minStartTime)
@@ -151,7 +170,7 @@
             if (episode.indexedEndTime > maxEndTime)
                 continue;
             
-            [indexPaths addObject:[NSIndexPath indexPathForItem:[episodes indexOfObject:episode] inSection:episode.channel]];
+            [indexPaths addObject:[NSIndexPath indexPathForItem:[channel.episodes indexOfObject:episode] inSection:channelIndex]];
         }
     }
     

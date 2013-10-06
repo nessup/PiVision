@@ -43,7 +43,7 @@
 - (void)updateViews {
     self.showLabel.text = self.title = self.episode.programName;
     self.titleLabel.text = self.episode.title;
-    self.channelLabel.text = self.episode.channelName;
+    self.channelLabel.text = self.episode.channelNumber;
 }
 
 #pragma mark - Episode

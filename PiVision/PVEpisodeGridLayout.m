@@ -65,7 +65,7 @@
     id<PVEpisodeDataSource> dataSource = (id<PVEpisodeDataSource>)self.collectionView.dataSource;
     PVEpisode *episode = [dataSource episodeAtIndexPath:indexPath];
     UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
-    attributes.frame = [self frameForEpisode:episode];
+    attributes.frame = [self frameForEpisode:episode atIndexPath:indexPath];
     return attributes;
 }
 
@@ -159,11 +159,11 @@
     return indexPaths;
 }
 
-- (CGRect)frameForEpisode:(PVEpisode *)episode
+- (CGRect)frameForEpisode:(PVEpisode *)episode atIndexPath:(NSIndexPath *)indexPath
 {
     CGRect frame = CGRectZero;
     frame.origin.x = WidthPerHour + episode.indexedStartTime * (PVGridViewControllerDayWidth / SecondsPerDay);
-    frame.origin.y = PVGridViewControllerDayHeight + episode.channel * PVGridViewControllerDayHeight;
+    frame.origin.y = PVGridViewControllerDayHeight + indexPath.section * PVGridViewControllerDayHeight;
     frame.size.width = (episode.endTime - episode.startTime) * (PVGridViewControllerDayWidth / SecondsPerDay);
     frame.size.height = PVGridViewControllerDayHeight;
     
