@@ -17,7 +17,7 @@
 #define PVGridViewControllerDayWidth        4000.f
 #define PixelsPerSecond                     (PVGridViewControllerDayWidth / SecondsPerDay)
 #define WidthPerHour                        (SecondsPerHour * PixelsPerSecond)
-#define FirstColumnWidth                    WidthPerHour
+#define FirstColumnWidth                    90.f
 
 @implementation PVEpisodeGridLayout
 
@@ -166,7 +166,7 @@
 - (CGRect)frameForEpisode:(PVEpisode *)episode atIndexPath:(NSIndexPath *)indexPath
 {
     CGRect frame = CGRectZero;
-    frame.origin.x = FirstColumnWidth + episode.indexedStartTime * (PVGridViewControllerDayWidth / SecondsPerDay);
+    frame.origin.x = FirstColumnWidth + (episode.indexedStartTime + 60*30) * (PVGridViewControllerDayWidth / SecondsPerDay);
     frame.origin.y = PVGridViewControllerDayHeight + indexPath.section * PVGridViewControllerDayHeight;
     frame.size.width = (episode.endTime - episode.startTime) * (PVGridViewControllerDayWidth / SecondsPerDay);
     frame.size.height = PVGridViewControllerDayHeight;
@@ -178,8 +178,7 @@
     NSDateComponents *hourComponents = [[[NSCalendar alloc]
                                         initWithCalendarIdentifier:NSGregorianCalendar] components:NSHourCalendarUnit fromDate:[NSDate date]];
     NSInteger hourInteger = [hourComponents hour];
-    CGFloat lol = FirstColumnWidth;
-    return FirstColumnWidth + WidthPerHour * (hourInteger - 1);
+    return 248.f + WidthPerHour * (hourInteger - 1);
 }
 
 @end
