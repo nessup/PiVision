@@ -134,7 +134,8 @@
             headerView.label.textAlignment = NSTextAlignmentLeft;
         }
     } else if ([kind isEqualToString:@"HourHeaderView"]) {
-        headerView.label.text = [NSString stringWithFormat:@"Channel %d", indexPath.section + 1];
+        PVChannel *channel = [self.channels objectAtIndex:indexPath.section + 1];
+        headerView.label.text = channel.displayName;
         headerView.label.textAlignment = NSTextAlignmentCenter;
     }
     return headerView;
