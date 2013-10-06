@@ -18,6 +18,7 @@
 		02B5B38518015FBC0060565C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B5B38418015FBC0060565C /* libz.dylib */; };
 		02B5B388180161170060565C /* PVRoviManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B5B387180161170060565C /* PVRoviManager.m */; };
 		02B5B38B180169340060565C /* PVChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B5B38A180169340060565C /* PVChannel.m */; };
+		02B5B38D180189770060565C /* soup700.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 02B5B38C180189770060565C /* soup700.mp4 */; };
 		3BF71B2A1800978900A8FDFA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BF71B291800978900A8FDFA /* Foundation.framework */; };
 		3BF71B2C1800978900A8FDFA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BF71B2B1800978900A8FDFA /* CoreGraphics.framework */; };
 		3BF71B2E1800978900A8FDFA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BF71B2D1800978900A8FDFA /* UIKit.framework */; };
@@ -89,6 +90,7 @@
 		02B5B387180161170060565C /* PVRoviManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVRoviManager.m; sourceTree = "<group>"; };
 		02B5B389180169340060565C /* PVChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVChannel.h; sourceTree = "<group>"; };
 		02B5B38A180169340060565C /* PVChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVChannel.m; sourceTree = "<group>"; };
+		02B5B38C180189770060565C /* soup700.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = soup700.mp4; sourceTree = "<group>"; };
 		3BF71B261800978900A8FDFA /* PiVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PiVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BF71B291800978900A8FDFA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3BF71B2B1800978900A8FDFA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -264,6 +266,7 @@
 		3BF71B301800978900A8FDFA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				02B5B38C180189770060565C /* soup700.mp4 */,
 				3BF71B311800978900A8FDFA /* PiVision-Info.plist */,
 				3BF71B321800978900A8FDFA /* InfoPlist.strings */,
 				3BF71B351800978900A8FDFA /* main.m */,
@@ -502,6 +505,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02B5B38D180189770060565C /* soup700.mp4 in Resources */,
 				3BF71B451800978900A8FDFA /* Images.xcassets in Resources */,
 				3BF71BB418012DD700A8FDFA /* PVEpisodeViewController.xib in Resources */,
 				3BF71B341800978900A8FDFA /* InfoPlist.strings in Resources */,
