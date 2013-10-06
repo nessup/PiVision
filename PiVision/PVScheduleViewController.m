@@ -18,7 +18,7 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        self.title = @"Listings";
+        self.title = @"PiVision";
         self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Listings" image:[UIImage imageNamed:@"schedule"] tag:0];
     }
     return self;
