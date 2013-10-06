@@ -37,6 +37,7 @@
 		3BF71B9E1800EC2F00A8FDFA /* PVGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B9D1800EC2F00A8FDFA /* PVGridCell.m */; };
 		3BF71BA21800F2E100A8FDFA /* PVEpisodeGridLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71BA11800F2E100A8FDFA /* PVEpisodeGridLayout.m */; };
 		3BF71BA6180104AA00A8FDFA /* PVGridHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71BA5180104AA00A8FDFA /* PVGridHeaderView.m */; };
+		3BF71BA9180120D500A8FDFA /* PVUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71BA8180120D500A8FDFA /* PVUtility.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,8 @@
 		3BF71BA31800F51700A8FDFA /* PVEpisodeDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PVEpisodeDataSource.h; sourceTree = "<group>"; };
 		3BF71BA4180104AA00A8FDFA /* PVGridHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVGridHeaderView.h; sourceTree = "<group>"; };
 		3BF71BA5180104AA00A8FDFA /* PVGridHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVGridHeaderView.m; sourceTree = "<group>"; };
+		3BF71BA7180120D500A8FDFA /* PVUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVUtility.h; sourceTree = "<group>"; };
+		3BF71BA8180120D500A8FDFA /* PVUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVUtility.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +271,8 @@
 			children = (
 				3BF71B721800A91C00A8FDFA /* Categories */,
 				3BF71B891800D3D500A8FDFA /* Controller */,
+				3BF71BA7180120D500A8FDFA /* PVUtility.h */,
+				3BF71BA8180120D500A8FDFA /* PVUtility.m */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -439,6 +444,7 @@
 				3BF71B7D1800A93D00A8FDFA /* UIView+Layout.m in Sources */,
 				3BF71B841800B8C900A8FDFA /* PVSegmentedControl.m in Sources */,
 				3BF71B9B1800E95300A8FDFA /* PVScheduleViewController.m in Sources */,
+				3BF71BA9180120D500A8FDFA /* PVUtility.m in Sources */,
 				3BF71B661800989500A8FDFA /* PVMyEpisodesViewController.m in Sources */,
 				3BF71B8F1800DBFA00A8FDFA /* PVAllEpisodesViewController.m in Sources */,
 			);

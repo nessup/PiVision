@@ -13,15 +13,14 @@
 
 #define SecondsPerDay                       (60.f*60.f*24.f)
 #define SecondsPerHour                      (60.f*60.f)
-#define PVGridViewControllerDayWidth        2400.f
 #define PVGridViewControllerDayHeight       60.f
+#define PVGridViewControllerDayWidth        3000.f
 #define PixelsPerSecond                     (PVGridViewControllerDayWidth / SecondsPerDay)
 #define WidthPerHour                        (SecondsPerHour * PixelsPerSecond)
 
 @implementation PVEpisodeGridLayout
 
 - (CGSize)collectionViewContentSize {
-    
     return (CGSize) {
         PVGridViewControllerDayWidth,
         self.collectionView.frame.size.height // * rows
@@ -36,7 +35,6 @@
     // We call a custom helper method -indexPathsOfItemsInRect: here
     // which computes the index paths of the cells that should be included
     // in rect.
-    NSLog(@"y = %f", rect.origin.y);
     NSArray *visibleIndexPaths = [self indexPathsOfItemsInRect:rect];
     for (NSIndexPath *indexPath in visibleIndexPaths) {
         UICollectionViewLayoutAttributes *attributes = [self layoutAttributesForItemAtIndexPath:indexPath];
@@ -76,9 +74,17 @@
     UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:kind withIndexPath:indexPath];
     
     if ([kind isEqualToString:@"DayHeaderView"]) {
-        CGRect frame = CGRectMake(WidthPerHour + WidthPerHour * indexPath.item, self.collectionView.contentOffset.y + self.collectionView.contentInset.top, WidthPerHour, PVGridViewControllerDayHeight);
+        CGRect frame;
+        
+        if (indexPath.section == 0 && indexPath.item == 0) {
+            frame = CGRectMake(self.collectionView.contentOffset.x, self.collectionView.contentOffset.y + self.collectionView.contentInset.top, WidthPerHour, PVGridViewControllerDayHeight);
+            attributes.zIndex = 20;
+        }
+        else {
+            frame = CGRectMake( WidthPerHour * indexPath.item, self.collectionView.contentOffset.y + self.collectionView.contentInset.top, WidthPerHour, PVGridViewControllerDayHeight);
+            attributes.zIndex = 10;
+        }
         attributes.frame = frame;
-        attributes.zIndex = 10;
     } else if ([kind isEqualToString:@"HourHeaderView"]) {
         CGRect frame = CGRectMake(self.collectionView.contentOffset.x, PVGridViewControllerDayHeight + PVGridViewControllerDayHeight * indexPath.section, WidthPerHour, PVGridViewControllerDayHeight);
         attributes.frame = frame;
@@ -132,6 +138,11 @@
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:idx inSection:0];
         [indexPaths addObject:indexPath];
     }
+    // hack to make sure supplemental view at 0,0 is always visible
+    if (minDayIndex != 0) {
+        [indexPaths addObject:[NSIndexPath indexPathForItem:0 inSection:0]];
+    }
+    
     return indexPaths;
 }
 

@@ -46,7 +46,8 @@
     _collectionView.frame = self.view.bounds;
     _collectionView.dataSource = self;
     _collectionView.delegate = self;
-    _collectionView.backgroundColor = [UIColor greenColor];
+    _collectionView.backgroundColor = [UIColor whiteColor];
+    _collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [_collectionView registerClass:[PVGridCell class] forCellWithReuseIdentifier:@"GridCell"];
     [self.collectionView registerClass:[PVGridHeaderView class] forSupplementaryViewOfKind:@"DayHeaderView" withReuseIdentifier:@"HeaderView"];
     [self.collectionView registerClass:[PVGridHeaderView class] forSupplementaryViewOfKind:@"HourHeaderView" withReuseIdentifier:@"HeaderView"];
@@ -72,17 +73,25 @@
 {
     PVGridHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];
     if ([kind isEqualToString:@"DayHeaderView"]) {
-        NSInteger hour = (indexPath.item + 1) % 12;
-        NSString *amPm = nil;
-        if (indexPath.item > 11) {
-            amPm = @"pm";
+        if (indexPath.section == 0 && indexPath.row == 0) {
+            headerView.label.text = @"Today";
+            headerView.label.textAlignment = NSTextAlignmentCenter;
         }
         else {
-            amPm = @"am";
+            NSInteger hour = (indexPath.item) % 12;
+            NSString *amPm = nil;
+            if (indexPath.item > 11) {
+                amPm = @"pm";
+            }
+            else {
+                amPm = @"am";
+            }
+            headerView.label.text = [NSString stringWithFormat:@"%2d:00 %@", hour, amPm];
+            headerView.label.textAlignment = NSTextAlignmentLeft;
         }
-        headerView.label.text = [NSString stringWithFormat:@"%2d:00 %@", hour, amPm];
     } else if ([kind isEqualToString:@"HourHeaderView"]) {
         headerView.label.text = [NSString stringWithFormat:@"Channel %d", indexPath.section + 1];
+        headerView.label.textAlignment = NSTextAlignmentCenter;
     }
     return headerView;
 }
