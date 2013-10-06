@@ -45,6 +45,7 @@
         self.view.frame.size.height - PVSegmentedControlHeight
     };
     _containerView.backgroundColor = [UIColor greenColor];
+    _containerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     
     return _containerView;
 }

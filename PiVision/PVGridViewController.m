@@ -108,6 +108,9 @@
     PVGridCell *cell = (PVGridCell *)[cv dequeueReusableCellWithReuseIdentifier:@"GridCell" forIndexPath:indexPath];
     PVEpisode *episode = [self episodeAtIndexPath:indexPath];
     cell.textLabel.text = episode.title;
+    if (episode.title.length == 0) {
+        cell.textLabel.text = episode.programName;
+    }
     return cell;
 }
 
