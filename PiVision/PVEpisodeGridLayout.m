@@ -170,4 +170,11 @@
     return frame;
 }
 
+- (CGFloat)xOffsetForDate:(NSDate *)date {
+    NSDateComponents *hourComponents = [[[NSCalendar alloc]
+                                        initWithCalendarIdentifier:NSGregorianCalendar] components:NSHourCalendarUnit fromDate:[NSDate date]];
+    NSInteger hourInteger = [hourComponents hour];
+    return WidthPerHour + WidthPerHour * (hourInteger - 1);
+}
+
 @end

@@ -18,6 +18,7 @@
 
 @interface PVGridViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) PVEpisodeGridLayout *gridLayout;
 @property (nonatomic, strong) NSArray *channels;
 @end
 
@@ -36,18 +37,39 @@
     [self.view addSubview:self.collectionView];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [UIView animateWithDuration:1.f animations:^{
+        CGFloat xOffset = [self.gridLayout xOffsetForDate:[NSDate date]];
+        self.collectionView.contentOffset = (CGPoint) {
+            xOffset,
+            self.collectionView.contentOffset.y
+        };
+    }];
+}
+
 #pragma mark - Collection view
+
+- (PVEpisodeGridLayout *)gridLayout {
+    if (_gridLayout)
+        return _gridLayout;
+    
+    _gridLayout = [PVEpisodeGridLayout new];
+    
+    return _gridLayout;
+}
 
 - (UICollectionView *)collectionView {
     if (_collectionView)
         return _collectionView;
     
-    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:[PVEpisodeGridLayout new]];
+    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:self.gridLayout];
     _collectionView.frame = self.view.bounds;
     _collectionView.dataSource = self;
     _collectionView.delegate = self;
     _collectionView.backgroundColor = [UIColor whiteColor];
     _collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    _collectionView.directionalLockEnabled = YES;
     [_collectionView registerClass:[PVGridCell class] forCellWithReuseIdentifier:@"GridCell"];
     [self.collectionView registerClass:[PVGridHeaderView class] forSupplementaryViewOfKind:@"DayHeaderView" withReuseIdentifier:@"HeaderView"];
     [self.collectionView registerClass:[PVGridHeaderView class] forSupplementaryViewOfKind:@"HourHeaderView" withReuseIdentifier:@"HeaderView"];
@@ -96,6 +118,10 @@
         headerView.label.textAlignment = NSTextAlignmentCenter;
     }
     return headerView;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    NSLog(@"offset = %f", scrollView.contentOffset.y);
 }
 
 #pragma mark - PVEpisode data source

@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface PVEpisodeGridLayout : UICollectionViewLayout
-
+- (CGFloat)xOffsetForDate:(NSDate *)date;
 @end
