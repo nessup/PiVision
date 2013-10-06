@@ -8,6 +8,6 @@
 
 #import "PVTableViewController.h"
 
-@interface PVAllShowsViewController : PVTableViewController
+@interface PVUpcomingEpisodesViewController : PVTableViewController
 
 @end

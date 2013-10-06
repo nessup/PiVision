@@ -20,8 +20,8 @@
 		3BF71B561800978900A8FDFA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3BF71B541800978900A8FDFA /* InfoPlist.strings */; };
 		3BF71B581800978900A8FDFA /* PiVisionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B571800978900A8FDFA /* PiVisionTests.m */; };
 		3BF71B63180097EF00A8FDFA /* PVTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B62180097EF00A8FDFA /* PVTabBarController.m */; };
-		3BF71B661800989500A8FDFA /* PVMyShowsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B651800989500A8FDFA /* PVMyShowsViewController.m */; };
-		3BF71B69180098B300A8FDFA /* PVAllShowsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B68180098B300A8FDFA /* PVAllShowsViewController.m */; };
+		3BF71B661800989500A8FDFA /* PVMyEpisodesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B651800989500A8FDFA /* PVMyEpisodesViewController.m */; };
+		3BF71B69180098B300A8FDFA /* PVUpcomingEpisodesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B68180098B300A8FDFA /* PVUpcomingEpisodesViewController.m */; };
 		3BF71B6C1800993D00A8FDFA /* PVTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B6B1800993D00A8FDFA /* PVTableViewController.m */; };
 		3BF71B7B1800A93D00A8FDFA /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B741800A93D00A8FDFA /* UIColor+HexString.m */; };
 		3BF71B7C1800A93D00A8FDFA /* NSTimer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B761800A93D00A8FDFA /* NSTimer+Blocks.m */; };
@@ -29,6 +29,14 @@
 		3BF71B7E1800A93D00A8FDFA /* UIAlertView+MKBlockAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B7A1800A93D00A8FDFA /* UIAlertView+MKBlockAdditions.m */; };
 		3BF71B811800AC8500A8FDFA /* PVSegmentedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B801800AC8500A8FDFA /* PVSegmentedViewController.m */; };
 		3BF71B841800B8C900A8FDFA /* PVSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B831800B8C900A8FDFA /* PVSegmentedControl.m */; };
+		3BF71B8C1800D89500A8FDFA /* PVRecentEpisodesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B8B1800D89500A8FDFA /* PVRecentEpisodesViewController.m */; };
+		3BF71B8F1800DBFA00A8FDFA /* PVAllEpisodesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B8E1800DBFA00A8FDFA /* PVAllEpisodesViewController.m */; };
+		3BF71B921800DCD100A8FDFA /* PVGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B911800DCD100A8FDFA /* PVGridViewController.m */; };
+		3BF71B971800E4DD00A8FDFA /* PVEpisode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B961800E4DD00A8FDFA /* PVEpisode.m */; };
+		3BF71B9B1800E95300A8FDFA /* PVScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B9A1800E95300A8FDFA /* PVScheduleViewController.m */; };
+		3BF71B9E1800EC2F00A8FDFA /* PVGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71B9D1800EC2F00A8FDFA /* PVGridCell.m */; };
+		3BF71BA21800F2E100A8FDFA /* PVEpisodeGridLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71BA11800F2E100A8FDFA /* PVEpisodeGridLayout.m */; };
+		3BF71BA6180104AA00A8FDFA /* PVGridHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71BA5180104AA00A8FDFA /* PVGridHeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,10 +68,10 @@
 		3BF71B571800978900A8FDFA /* PiVisionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PiVisionTests.m; sourceTree = "<group>"; };
 		3BF71B61180097EF00A8FDFA /* PVTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVTabBarController.h; sourceTree = "<group>"; };
 		3BF71B62180097EF00A8FDFA /* PVTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVTabBarController.m; sourceTree = "<group>"; };
-		3BF71B641800989500A8FDFA /* PVMyShowsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVMyShowsViewController.h; sourceTree = "<group>"; };
-		3BF71B651800989500A8FDFA /* PVMyShowsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVMyShowsViewController.m; sourceTree = "<group>"; };
-		3BF71B67180098B300A8FDFA /* PVAllShowsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVAllShowsViewController.h; sourceTree = "<group>"; };
-		3BF71B68180098B300A8FDFA /* PVAllShowsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVAllShowsViewController.m; sourceTree = "<group>"; };
+		3BF71B641800989500A8FDFA /* PVMyEpisodesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVMyEpisodesViewController.h; sourceTree = "<group>"; };
+		3BF71B651800989500A8FDFA /* PVMyEpisodesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVMyEpisodesViewController.m; sourceTree = "<group>"; };
+		3BF71B67180098B300A8FDFA /* PVUpcomingEpisodesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVUpcomingEpisodesViewController.h; sourceTree = "<group>"; };
+		3BF71B68180098B300A8FDFA /* PVUpcomingEpisodesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVUpcomingEpisodesViewController.m; sourceTree = "<group>"; };
 		3BF71B6A1800993D00A8FDFA /* PVTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVTableViewController.h; sourceTree = "<group>"; };
 		3BF71B6B1800993D00A8FDFA /* PVTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVTableViewController.m; sourceTree = "<group>"; };
 		3BF71B731800A93D00A8FDFA /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
@@ -78,6 +86,23 @@
 		3BF71B801800AC8500A8FDFA /* PVSegmentedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVSegmentedViewController.m; sourceTree = "<group>"; };
 		3BF71B821800B8C900A8FDFA /* PVSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVSegmentedControl.h; sourceTree = "<group>"; };
 		3BF71B831800B8C900A8FDFA /* PVSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVSegmentedControl.m; sourceTree = "<group>"; };
+		3BF71B8A1800D89500A8FDFA /* PVRecentEpisodesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRecentEpisodesViewController.h; sourceTree = "<group>"; };
+		3BF71B8B1800D89500A8FDFA /* PVRecentEpisodesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVRecentEpisodesViewController.m; sourceTree = "<group>"; };
+		3BF71B8D1800DBFA00A8FDFA /* PVAllEpisodesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVAllEpisodesViewController.h; sourceTree = "<group>"; };
+		3BF71B8E1800DBFA00A8FDFA /* PVAllEpisodesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVAllEpisodesViewController.m; sourceTree = "<group>"; };
+		3BF71B901800DCD100A8FDFA /* PVGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVGridViewController.h; sourceTree = "<group>"; };
+		3BF71B911800DCD100A8FDFA /* PVGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVGridViewController.m; sourceTree = "<group>"; };
+		3BF71B951800E4DD00A8FDFA /* PVEpisode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVEpisode.h; sourceTree = "<group>"; };
+		3BF71B961800E4DD00A8FDFA /* PVEpisode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVEpisode.m; sourceTree = "<group>"; };
+		3BF71B991800E95300A8FDFA /* PVScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVScheduleViewController.h; sourceTree = "<group>"; };
+		3BF71B9A1800E95300A8FDFA /* PVScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVScheduleViewController.m; sourceTree = "<group>"; };
+		3BF71B9C1800EC2F00A8FDFA /* PVGridCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVGridCell.h; sourceTree = "<group>"; };
+		3BF71B9D1800EC2F00A8FDFA /* PVGridCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVGridCell.m; sourceTree = "<group>"; };
+		3BF71BA01800F2E100A8FDFA /* PVEpisodeGridLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVEpisodeGridLayout.h; sourceTree = "<group>"; };
+		3BF71BA11800F2E100A8FDFA /* PVEpisodeGridLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVEpisodeGridLayout.m; sourceTree = "<group>"; };
+		3BF71BA31800F51700A8FDFA /* PVEpisodeDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PVEpisodeDataSource.h; sourceTree = "<group>"; };
+		3BF71BA4180104AA00A8FDFA /* PVGridHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVGridHeaderView.h; sourceTree = "<group>"; };
+		3BF71BA5180104AA00A8FDFA /* PVGridHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVGridHeaderView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,9 +164,13 @@
 			children = (
 				3BF71B381800978900A8FDFA /* PVAppDelegate.h */,
 				3BF71B391800978900A8FDFA /* PVAppDelegate.m */,
-				3BF71B721800A91C00A8FDFA /* Categories */,
-				3BF71B6E1800A7FF00A8FDFA /* View */,
-				3BF71B6D1800A7F600A8FDFA /* Controller */,
+				3BF71B61180097EF00A8FDFA /* PVTabBarController.h */,
+				3BF71B62180097EF00A8FDFA /* PVTabBarController.m */,
+				3BF71B981800E4F300A8FDFA /* Model */,
+				3BF71B931800DCFD00A8FDFA /* Schedule */,
+				3BF71B881800D3CF00A8FDFA /* Shared */,
+				3BF71B861800D39200A8FDFA /* Upcoming Episodes */,
+				3BF71B851800D34B00A8FDFA /* My Episodes */,
 				3BF71B441800978900A8FDFA /* Images.xcassets */,
 				3BF71B301800978900A8FDFA /* Supporting Files */,
 			);
@@ -177,23 +206,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3BF71B6D1800A7F600A8FDFA /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				3BF71B61180097EF00A8FDFA /* PVTabBarController.h */,
-				3BF71B62180097EF00A8FDFA /* PVTabBarController.m */,
-				3BF71B7F1800AC8500A8FDFA /* PVSegmentedViewController.h */,
-				3BF71B801800AC8500A8FDFA /* PVSegmentedViewController.m */,
-				3BF71B6A1800993D00A8FDFA /* PVTableViewController.h */,
-				3BF71B6B1800993D00A8FDFA /* PVTableViewController.m */,
-				3BF71B67180098B300A8FDFA /* PVAllShowsViewController.h */,
-				3BF71B68180098B300A8FDFA /* PVAllShowsViewController.m */,
-				3BF71B641800989500A8FDFA /* PVMyShowsViewController.h */,
-				3BF71B651800989500A8FDFA /* PVMyShowsViewController.m */,
-			);
-			name = Controller;
-			sourceTree = "<group>";
-		};
 		3BF71B6E1800A7FF00A8FDFA /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +228,100 @@
 				3BF71B7A1800A93D00A8FDFA /* UIAlertView+MKBlockAdditions.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		3BF71B851800D34B00A8FDFA /* My Episodes */ = {
+			isa = PBXGroup;
+			children = (
+				3BF71B6E1800A7FF00A8FDFA /* View */,
+				3BF71B871800D3A500A8FDFA /* Controller */,
+			);
+			name = "My Episodes";
+			sourceTree = "<group>";
+		};
+		3BF71B861800D39200A8FDFA /* Upcoming Episodes */ = {
+			isa = PBXGroup;
+			children = (
+				3BF71B67180098B300A8FDFA /* PVUpcomingEpisodesViewController.h */,
+				3BF71B68180098B300A8FDFA /* PVUpcomingEpisodesViewController.m */,
+			);
+			name = "Upcoming Episodes";
+			sourceTree = "<group>";
+		};
+		3BF71B871800D3A500A8FDFA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3BF71B7F1800AC8500A8FDFA /* PVSegmentedViewController.h */,
+				3BF71B801800AC8500A8FDFA /* PVSegmentedViewController.m */,
+				3BF71B641800989500A8FDFA /* PVMyEpisodesViewController.h */,
+				3BF71B651800989500A8FDFA /* PVMyEpisodesViewController.m */,
+				3BF71B8A1800D89500A8FDFA /* PVRecentEpisodesViewController.h */,
+				3BF71B8B1800D89500A8FDFA /* PVRecentEpisodesViewController.m */,
+				3BF71B8D1800DBFA00A8FDFA /* PVAllEpisodesViewController.h */,
+				3BF71B8E1800DBFA00A8FDFA /* PVAllEpisodesViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		3BF71B881800D3CF00A8FDFA /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				3BF71B721800A91C00A8FDFA /* Categories */,
+				3BF71B891800D3D500A8FDFA /* Controller */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		3BF71B891800D3D500A8FDFA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3BF71B6A1800993D00A8FDFA /* PVTableViewController.h */,
+				3BF71B6B1800993D00A8FDFA /* PVTableViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		3BF71B931800DCFD00A8FDFA /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				3BF71B941800DD0400A8FDFA /* Controller */,
+				3BF71B9F1800EC3C00A8FDFA /* View */,
+			);
+			name = Schedule;
+			sourceTree = "<group>";
+		};
+		3BF71B941800DD0400A8FDFA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3BF71BA31800F51700A8FDFA /* PVEpisodeDataSource.h */,
+				3BF71B991800E95300A8FDFA /* PVScheduleViewController.h */,
+				3BF71B9A1800E95300A8FDFA /* PVScheduleViewController.m */,
+				3BF71B901800DCD100A8FDFA /* PVGridViewController.h */,
+				3BF71B911800DCD100A8FDFA /* PVGridViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		3BF71B981800E4F300A8FDFA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3BF71B951800E4DD00A8FDFA /* PVEpisode.h */,
+				3BF71B961800E4DD00A8FDFA /* PVEpisode.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		3BF71B9F1800EC3C00A8FDFA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3BF71B9C1800EC2F00A8FDFA /* PVGridCell.h */,
+				3BF71B9D1800EC2F00A8FDFA /* PVGridCell.m */,
+				3BF71BA4180104AA00A8FDFA /* PVGridHeaderView.h */,
+				3BF71BA5180104AA00A8FDFA /* PVGridHeaderView.m */,
+				3BF71BA01800F2E100A8FDFA /* PVEpisodeGridLayout.h */,
+				3BF71BA11800F2E100A8FDFA /* PVEpisodeGridLayout.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,17 +422,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BF71B3A1800978900A8FDFA /* PVAppDelegate.m in Sources */,
+				3BF71BA21800F2E100A8FDFA /* PVEpisodeGridLayout.m in Sources */,
+				3BF71B8C1800D89500A8FDFA /* PVRecentEpisodesViewController.m in Sources */,
 				3BF71B6C1800993D00A8FDFA /* PVTableViewController.m in Sources */,
 				3BF71B811800AC8500A8FDFA /* PVSegmentedViewController.m in Sources */,
+				3BF71B921800DCD100A8FDFA /* PVGridViewController.m in Sources */,
+				3BF71B971800E4DD00A8FDFA /* PVEpisode.m in Sources */,
 				3BF71B7B1800A93D00A8FDFA /* UIColor+HexString.m in Sources */,
 				3BF71B7C1800A93D00A8FDFA /* NSTimer+Blocks.m in Sources */,
 				3BF71B7E1800A93D00A8FDFA /* UIAlertView+MKBlockAdditions.m in Sources */,
+				3BF71B9E1800EC2F00A8FDFA /* PVGridCell.m in Sources */,
 				3BF71B361800978900A8FDFA /* main.m in Sources */,
-				3BF71B69180098B300A8FDFA /* PVAllShowsViewController.m in Sources */,
+				3BF71B69180098B300A8FDFA /* PVUpcomingEpisodesViewController.m in Sources */,
+				3BF71BA6180104AA00A8FDFA /* PVGridHeaderView.m in Sources */,
 				3BF71B63180097EF00A8FDFA /* PVTabBarController.m in Sources */,
 				3BF71B7D1800A93D00A8FDFA /* UIView+Layout.m in Sources */,
 				3BF71B841800B8C900A8FDFA /* PVSegmentedControl.m in Sources */,
-				3BF71B661800989500A8FDFA /* PVMyShowsViewController.m in Sources */,
+				3BF71B9B1800E95300A8FDFA /* PVScheduleViewController.m in Sources */,
+				3BF71B661800989500A8FDFA /* PVMyEpisodesViewController.m in Sources */,
+				3BF71B8F1800DBFA00A8FDFA /* PVAllEpisodesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,6 +641,7 @@
 				3BF71B5D1800978900A8FDFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3BF71B5E1800978900A8FDFA /* Build configuration list for PBXNativeTarget "PiVisionTests" */ = {
 			isa = XCConfigurationList;
@@ -535,6 +650,7 @@
 				3BF71B601800978900A8FDFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

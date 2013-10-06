@@ -8,6 +8,6 @@
 
 #import "PVSegmentedViewController.h"
 
-@interface PVMyShowsViewController : PVSegmentedViewController
+@interface PVMyEpisodesViewController : PVSegmentedViewController
 
 @end

@@ -8,8 +8,9 @@
 
 #import "PVTabBarController.h"
 
-#import "PVMyShowsViewController.h"
-#import "PVAllShowsViewController.h"
+#import "PVScheduleViewController.h"
+#import "PVMyEpisodesViewController.h"
+#import "PVUpcomingEpisodesViewController.h"
 
 @implementation PVTabBarController
 
@@ -17,8 +18,9 @@
     [super viewDidLoad];
     
     [self setViewControllers:@[
-                              [[UINavigationController alloc] initWithRootViewController:[PVAllShowsViewController new]],
-                               [[UINavigationController alloc] initWithRootViewController:[PVMyShowsViewController new]]
+                              [[UINavigationController alloc] initWithRootViewController:[PVScheduleViewController new]],
+                              [[UINavigationController alloc] initWithRootViewController:[PVUpcomingEpisodesViewController new]],
+                               [[UINavigationController alloc] initWithRootViewController:[PVMyEpisodesViewController new]]
                                ]];
 }
 

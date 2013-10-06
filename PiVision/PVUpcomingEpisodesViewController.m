@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 PiVision. All rights reserved.
 //
 
-#import "PVAllShowsViewController.h"
+#import "PVUpcomingEpisodesViewController.h"
 
-@implementation PVAllShowsViewController
+@implementation PVUpcomingEpisodesViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {

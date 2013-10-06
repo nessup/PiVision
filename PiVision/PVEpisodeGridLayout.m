@@ -1,0 +1,162 @@
+//
+//  PVGridLayout.m
+//  PiVision
+//
+//  Created by Dany on 10/5/13.
+//  Copyright (c) 2013 PiVision. All rights reserved.
+//
+
+#import "PVEpisodeGridLayout.h"
+
+#import "PVEpisodeDataSource.h"
+#import "PVEpisode.h"
+
+#define SecondsPerDay                       (60.f*60.f*24.f)
+#define SecondsPerHour                      (60.f*60.f)
+#define PVGridViewControllerDayWidth        2400.f
+#define PVGridViewControllerDayHeight       60.f
+#define PixelsPerSecond                     (PVGridViewControllerDayWidth / SecondsPerDay)
+#define WidthPerHour                        (SecondsPerHour * PixelsPerSecond)
+
+@implementation PVEpisodeGridLayout
+
+- (CGSize)collectionViewContentSize {
+    
+    return (CGSize) {
+        PVGridViewControllerDayWidth,
+        self.collectionView.frame.size.height // * rows
+    };
+}
+
+- (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect
+{
+    NSMutableArray *layoutAttributes = [NSMutableArray array];
+    
+    // Cells
+    // We call a custom helper method -indexPathsOfItemsInRect: here
+    // which computes the index paths of the cells that should be included
+    // in rect.
+    NSLog(@"y = %f", rect.origin.y);
+    NSArray *visibleIndexPaths = [self indexPathsOfItemsInRect:rect];
+    for (NSIndexPath *indexPath in visibleIndexPaths) {
+        UICollectionViewLayoutAttributes *attributes = [self layoutAttributesForItemAtIndexPath:indexPath];
+        [layoutAttributes addObject:attributes];
+    }
+    
+    // Supplementary views
+    NSArray *dayHeaderViewIndexPaths = [self indexPathsOfDayHeaderViewsInRect:rect];
+    for (NSIndexPath *indexPath in dayHeaderViewIndexPaths) {
+        UICollectionViewLayoutAttributes *attributes =
+        [self layoutAttributesForSupplementaryViewOfKind:@"DayHeaderView"
+                                             atIndexPath:indexPath];
+        [layoutAttributes addObject:attributes];
+    }
+    NSArray *hourHeaderViewIndexPaths = [self indexPathsOfHourHeaderViewsInRect:rect];
+    for (NSIndexPath *indexPath in hourHeaderViewIndexPaths) {
+        UICollectionViewLayoutAttributes *attributes =
+        [self layoutAttributesForSupplementaryViewOfKind:@"HourHeaderView"
+                                             atIndexPath:indexPath];
+        [layoutAttributes addObject:attributes];
+    }
+    
+    return layoutAttributes;
+}
+
+- (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    id<PVEpisodeDataSource> dataSource = (id<PVEpisodeDataSource>)self.collectionView.dataSource;
+    PVEpisode *episode = [dataSource episodeAtIndexPath:indexPath];
+    UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
+    attributes.frame = [self frameForEpisode:episode];
+    return attributes;
+}
+
+- (UICollectionViewLayoutAttributes *)layoutAttributesForSupplementaryViewOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:kind withIndexPath:indexPath];
+    
+    if ([kind isEqualToString:@"DayHeaderView"]) {
+        CGRect frame = CGRectMake(WidthPerHour + WidthPerHour * indexPath.item, self.collectionView.contentOffset.y + self.collectionView.contentInset.top, WidthPerHour, PVGridViewControllerDayHeight);
+        attributes.frame = frame;
+        attributes.zIndex = 10;
+    } else if ([kind isEqualToString:@"HourHeaderView"]) {
+        CGRect frame = CGRectMake(self.collectionView.contentOffset.x, PVGridViewControllerDayHeight + PVGridViewControllerDayHeight * indexPath.section, WidthPerHour, PVGridViewControllerDayHeight);
+        attributes.frame = frame;
+        attributes.zIndex = 10;
+    }
+    return attributes;
+}
+
+- (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds
+{
+//    CGRect oldBounds = self.collectionView.bounds;
+//    if (CGRectGetWidth(newBounds) != CGRectGetWidth(oldBounds)) {
+//        return YES;
+//    }
+//    return NO;
+    return YES;
+}
+
+#pragma mark - Utility
+
+- (NSArray *)indexPathsOfItemsInRect:(CGRect)rect
+{
+    NSInteger minChannel = [self channelFromYCoordinate:CGRectGetMinY(rect)];
+    NSInteger maxChannel = [self channelFromYCoordinate:CGRectGetMaxY(rect)];
+    NSInteger minStartTime = [self secondsFromXCoordinate:CGRectGetMinX(rect)];
+    NSInteger maxEndTime = [self secondsFromXCoordinate:CGRectGetMaxX(rect)];
+    
+    id<PVEpisodeDataSource> dataSource = (id<PVEpisodeDataSource>)self.collectionView.dataSource;
+    NSArray *indexPaths = [dataSource indexPathsOfEpisodesBetweenMinChannel:minChannel maxChannel:maxChannel minStartTime:minStartTime maxEndTime:maxEndTime];
+    return indexPaths;
+}
+
+- (NSInteger)secondsFromXCoordinate:(CGFloat)xPosition
+{
+    CGFloat contentWidth = [self collectionViewContentSize].width;
+    return MAX(xPosition * (SecondsPerDay / contentWidth), 0);
+}
+
+- (NSInteger)channelFromYCoordinate:(CGFloat)yPosition
+{
+    return MAX(yPosition * (1 / PVGridViewControllerDayHeight), 0);
+}
+
+- (NSArray *)indexPathsOfDayHeaderViewsInRect:(CGRect)rect
+{
+    NSInteger minDayIndex = [self secondsFromXCoordinate:CGRectGetMinX(rect)] / SecondsPerHour;
+    NSInteger maxDayIndex = [self secondsFromXCoordinate:CGRectGetMaxX(rect)] / SecondsPerHour;
+    
+    NSMutableArray *indexPaths = [NSMutableArray array];
+    for (NSInteger idx = minDayIndex; idx <= maxDayIndex; idx++) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:idx inSection:0];
+        [indexPaths addObject:indexPath];
+    }
+    return indexPaths;
+}
+
+- (NSArray *)indexPathsOfHourHeaderViewsInRect:(CGRect)rect
+{
+    NSInteger minHourIndex = [self channelFromYCoordinate:CGRectGetMinY(rect)];
+    NSInteger maxHourIndex = [self channelFromYCoordinate:CGRectGetMaxY(rect)];
+    
+    NSMutableArray *indexPaths = [NSMutableArray array];
+    for (NSInteger idx = minHourIndex; idx < self.collectionView.numberOfSections && idx <= maxHourIndex; idx++) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:idx];
+        [indexPaths addObject:indexPath];
+    }
+    return indexPaths;
+}
+
+- (CGRect)frameForEpisode:(PVEpisode *)episode
+{
+    CGRect frame = CGRectZero;
+    frame.origin.x = WidthPerHour + episode.startTime * (PVGridViewControllerDayWidth / SecondsPerDay);
+    frame.origin.y = PVGridViewControllerDayHeight + episode.channel * PVGridViewControllerDayHeight;
+    frame.size.width = (episode.endTime - episode.startTime) * (PVGridViewControllerDayWidth / SecondsPerDay);
+    frame.size.height = PVGridViewControllerDayHeight;
+    
+    return frame;
+}
+
+@end

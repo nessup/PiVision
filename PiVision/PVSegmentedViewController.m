@@ -19,6 +19,11 @@
 
 @implementation PVSegmentedViewController
 
+- (void)loadView {
+    [super loadView];
+    self.view.backgroundColor = [UIColor whiteColor];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.navigationBarHidden = NO;

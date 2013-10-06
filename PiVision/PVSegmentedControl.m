@@ -16,8 +16,6 @@
 
 - (id)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        self.backgroundColor = [UIColor colorWithRed:0.121653f green:0.558395f blue:0.837748f alpha:1];
-        
         _segmentedControl = [UISegmentedControl new];
         [self addSubview:_segmentedControl];
     }
@@ -36,10 +34,9 @@
 - (void)layoutSubviews {
     [self.segmentedControl sizeToFit];
     self.segmentedControl.frame = (CGRect) {
-        roundf(self.frame.size.width/2.f - 160.f/2.f),
+        roundf(self.frame.size.width/2.f - self.segmentedControl.frame.size.width/2.f),
         roundf(PVSegmentedControlHeight/2.f - self.segmentedControl.frame.size.height/2.f),
-        160.f,
-        self.segmentedControl.frame.size.height
+        self.segmentedControl.frame.size
     };
 }
 

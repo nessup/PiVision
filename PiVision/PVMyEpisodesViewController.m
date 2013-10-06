@@ -6,16 +6,18 @@
 //  Copyright (c) 2013 PiVision. All rights reserved.
 //
 
-#import "PVMyShowsViewController.h"
+#import "PVMyEpisodesViewController.h"
 
-@interface PVMyShowsViewController ()
+#import "PVRecentEpisodesViewController.h"
+
+@interface PVMyEpisodesViewController ()
 @end
 
-@implementation PVMyShowsViewController
+@implementation PVMyEpisodesViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        self.title = @"My Shows";
+        self.title = @"My Episodes";
         self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemDownloads tag:0];
     }
     return self;
@@ -24,12 +26,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setViewControllers:@[
-                               [UIViewController new],
+                               [PVRecentEpisodesViewController new],
                                [UIViewController new]
                                ]
                       titles:@[
-                               @"One",
-                               @"Two"
+                               @"Recent Shows",
+                               @"All Shows"
                                ]];
 }
 
