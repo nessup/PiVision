@@ -12,15 +12,14 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        self.title = @"All Shows";
-        self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFeatured tag:1];
+        self.title = @"Upcoming";
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Upcoming" image:[UIImage imageNamed:@"upcoming"] tag:1];
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"All Shows";
 }
 
 #pragma mark - Table view

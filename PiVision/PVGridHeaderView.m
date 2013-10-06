@@ -17,6 +17,7 @@
         self.backgroundColor = [UIColor whiteColor];
         
         _label = [UILabel new];
+        _label.font = [UIFont systemFontOfSize:14.f];
         [self addSubview:_label];
         
 //        _imageView = [AsyncImageView new];

@@ -13,7 +13,7 @@
 
 #define SecondsPerDay                       (60.f*60.f*24.f)
 #define SecondsPerHour                      (60.f*60.f)
-#define PVGridViewControllerDayHeight       60.f
+#define PVGridViewControllerDayHeight       50.f
 #define PVGridViewControllerDayWidth        3000.f
 #define PixelsPerSecond                     (PVGridViewControllerDayWidth / SecondsPerDay)
 #define WidthPerHour                        (SecondsPerHour * PixelsPerSecond)

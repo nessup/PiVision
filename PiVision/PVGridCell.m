@@ -29,6 +29,7 @@
         _textLabel = [UILabel new];
         _textLabel.textColor = [UIColor darkGrayColor];
         _textLabel.lineBreakMode = NSLineBreakByTruncatingTail;
+        _textLabel.font = [UIFont systemFontOfSize:14.f];
         [self addSubview:_textLabel];
     }
     return self;
