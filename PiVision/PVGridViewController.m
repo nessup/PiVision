@@ -123,10 +123,6 @@
     return headerView;
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    NSLog(@"offset = %f", scrollView.contentOffset.y);
-}
-
 #pragma mark - PVEpisode data source
 
 - (NSInteger)numberOfChannels {
