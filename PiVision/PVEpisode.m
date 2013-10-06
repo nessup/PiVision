@@ -17,6 +17,7 @@
         NSMutableArray *episodes = [NSMutableArray new];
         {
             PVEpisode *e = [PVEpisode new];
+            e.title = @"Best Show Ever";
             e.startTime = 0;
             e.endTime = 1800;
             e.channel = i;
@@ -25,6 +26,7 @@
         
         {
             PVEpisode *e = [PVEpisode new];
+            e.title = @"Best Show Ever";
             e.startTime = 1800;
             e.endTime = 3600;
             e.channel = i;
@@ -33,6 +35,7 @@
         
         {
             PVEpisode *e = [PVEpisode new];
+            e.title = @"Best Show Ever";
             e.startTime = 3600;
             e.endTime = 7200;
             e.channel = i;
@@ -41,6 +44,7 @@
         
         {
             PVEpisode *e = [PVEpisode new];
+            e.title = @"Best Show Ever";
             e.startTime = 7200;
             e.endTime = 10800;
             e.channel = i;

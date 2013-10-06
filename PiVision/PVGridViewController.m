@@ -65,7 +65,9 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"GridCell" forIndexPath:indexPath];
+    PVGridCell *cell = (PVGridCell *)[cv dequeueReusableCellWithReuseIdentifier:@"GridCell" forIndexPath:indexPath];
+    PVEpisode *episode = [self episodeAtIndexPath:indexPath];
+    cell.textLabel.text = episode.title;
     return cell;
 }
 

@@ -8,8 +8,8 @@
 
 #import "PVGridCell.h"
 
-#define TextMargin          5.f
-#define BottomRightMargin   2.f
+#define TextMargin          10.f
+#define BoxMargin           2.f
 
 @interface PVGridCell ()
 @property (nonatomic, strong) UIView *boxView;
@@ -29,7 +29,6 @@
         _textLabel = [UILabel new];
         _textLabel.textColor = [UIColor darkGrayColor];
         _textLabel.lineBreakMode = NSLineBreakByTruncatingTail;
-        _textLabel.backgroundColor = _boxView.backgroundColor;
         [self addSubview:_textLabel];
     }
     return self;
@@ -37,15 +36,18 @@
 
 - (void)layoutSubviews {
     self.boxView.frame = (CGRect) {
-        CGPointZero,
-        self.frame.size.width - BottomRightMargin,
-        self.frame.size.height - BottomRightMargin
+        BoxMargin,
+        BoxMargin,
+        self.frame.size.width - 2.f*BoxMargin,
+        self.frame.size.height - 2.f*BoxMargin
     };
     self.textLabel.frame = (CGRect) {
         TextMargin,
         TextMargin,
-        self.frame.size.width - 2.f*TextMargin - BottomRightMargin
+        self.frame.size.width - 2.f*TextMargin - BoxMargin,
+        self.textLabel.font.lineHeight
     };
+    [self.textLabel centerVertically];
 }
 
 @end
