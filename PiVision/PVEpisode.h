@@ -7,13 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PVChannel.h"
 
 @interface PVEpisode : NSObject
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *programName;
-@property (nonatomic, copy) NSString *channelNumber;
 @property (nonatomic, copy) NSString *episodeDescription;
+@property (nonatomic, copy) NSString *channelNumber;
+@property (nonatomic, strong) PVChannel *channel;
 @property (nonatomic) NSTimeInterval startTime;
 @property (nonatomic) NSTimeInterval endTime;
 

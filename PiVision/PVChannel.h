@@ -15,4 +15,6 @@
 @property (nonatomic, copy) NSString *displayName;
 @property (nonatomic, copy) NSString *longName;
 
+@property (nonatomic, copy) NSArray *episodes;
+
 @end
