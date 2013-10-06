@@ -32,6 +32,10 @@
     return self;
 }
 
+- (void)dealloc {
+    [[PVRoviManager sharedManager] removeObserver:self forKeyPath:@"channels"];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.collectionView];
@@ -46,10 +50,6 @@
             self.collectionView.contentOffset.y
         };
     }];
-}
-
-- (void)dealloc {
-    [[PVRoviManager sharedManager] removeObserver:self forKeyPath:@"channels"];
 }
 
 #pragma mark - Channels

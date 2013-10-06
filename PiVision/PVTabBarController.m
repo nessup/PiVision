@@ -11,6 +11,7 @@
 #import "PVScheduleViewController.h"
 #import "PVMyEpisodesViewController.h"
 #import "PVUpcomingEpisodesViewController.h"
+#import "PVRecentEpisodesViewController.h"
 
 @implementation PVTabBarController
 
@@ -20,7 +21,7 @@
     [self setViewControllers:@[
                               [[UINavigationController alloc] initWithRootViewController:[PVScheduleViewController new]],
                               [[UINavigationController alloc] initWithRootViewController:[PVUpcomingEpisodesViewController new]],
-                               [[UINavigationController alloc] initWithRootViewController:[PVMyEpisodesViewController new]]
+                               [[UINavigationController alloc] initWithRootViewController:[PVRecentEpisodesViewController new]]
                                ]];
 }
 

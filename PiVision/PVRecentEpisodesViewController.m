@@ -14,6 +14,14 @@
 
 @implementation PVRecentEpisodesViewController
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+        self.title = @"My Episodes";
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Recordings" image:[UIImage imageNamed:@"Download.png"] tag:0];
+    }
+    return self;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
 }
