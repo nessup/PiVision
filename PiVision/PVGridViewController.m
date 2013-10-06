@@ -13,6 +13,7 @@
 #import "PVGridCell.h"
 #import "PVEpisodeGridLayout.h"
 #import "PVGridHeaderView.h"
+#import "PVEpisodeViewController.h"
 
 #define PVGridViewControllerDayWidth        2400.f
 #define PVGridViewControllerDayHeight       60.f
@@ -176,6 +177,13 @@
     }
     
     return indexPaths;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    PVEpisode *episode = [self episodeAtIndexPath:indexPath];
+    PVEpisodeViewController *controller = [PVEpisodeViewController new];
+    controller.episode = episode;
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 @end

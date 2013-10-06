@@ -51,7 +51,6 @@
 		3BF71BA9180120D500A8FDFA /* PVUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71BA8180120D500A8FDFA /* PVUtility.m */; };
 		3BF71BB318012DD700A8FDFA /* PVEpisodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71BB118012DD700A8FDFA /* PVEpisodeViewController.m */; };
 		3BF71BB418012DD700A8FDFA /* PVEpisodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BF71BB218012DD700A8FDFA /* PVEpisodeViewController.xib */; };
-		3BF71BF8180155FA00A8FDFA /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF71BB9180155FA00A8FDFA /* AsyncImageView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,8 +147,6 @@
 		3BF71BB018012DD700A8FDFA /* PVEpisodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVEpisodeViewController.h; sourceTree = "<group>"; };
 		3BF71BB118012DD700A8FDFA /* PVEpisodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVEpisodeViewController.m; sourceTree = "<group>"; };
 		3BF71BB218012DD700A8FDFA /* PVEpisodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PVEpisodeViewController.xib; sourceTree = "<group>"; };
-		3BF71BB8180155FA00A8FDFA /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsyncImageView.h; path = AsyncImageView/AsyncImageView.h; sourceTree = "<group>"; };
-		3BF71BB9180155FA00A8FDFA /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AsyncImageView.m; path = AsyncImageView/AsyncImageView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,7 +214,6 @@
 			children = (
 				02B5B38018015F8E0060565C /* Reachability */,
 				0217BDB118015DDA0063EDA1 /* ASIHTTPRequest */,
-				3BF71BB6180155FA00A8FDFA /* AsyncImageView */,
 				3BF71B2F1800978900A8FDFA /* PiVision */,
 				3BF71B511800978900A8FDFA /* PiVisionTests */,
 				3BF71B281800978900A8FDFA /* Frameworks */,
@@ -428,15 +424,6 @@
 			name = "Episode View Controller";
 			sourceTree = "<group>";
 		};
-		3BF71BB6180155FA00A8FDFA /* AsyncImageView */ = {
-			isa = PBXGroup;
-			children = (
-				3BF71BB8180155FA00A8FDFA /* AsyncImageView.h */,
-				3BF71BB9180155FA00A8FDFA /* AsyncImageView.m */,
-			);
-			path = AsyncImageView;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -546,7 +533,6 @@
 				0217BE0718015DDA0063EDA1 /* ASIDownloadCache.m in Sources */,
 				3BF71B811800AC8500A8FDFA /* PVSegmentedViewController.m in Sources */,
 				0217BE0818015DDA0063EDA1 /* ASIFormDataRequest.m in Sources */,
-				3BF71BF8180155FA00A8FDFA /* AsyncImageView.m in Sources */,
 				3BF71B921800DCD100A8FDFA /* PVGridViewController.m in Sources */,
 				02B5B388180161170060565C /* PVRoviManager.m in Sources */,
 				02B5B38318015F8E0060565C /* Reachability.m in Sources */,

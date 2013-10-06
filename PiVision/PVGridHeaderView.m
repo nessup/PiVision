@@ -8,8 +8,6 @@
 
 #import "PVGridHeaderView.h"
 
-#import "AsyncImageView.h"
-
 @implementation PVGridHeaderView
 
 - (id)initWithFrame:(CGRect)frame {
