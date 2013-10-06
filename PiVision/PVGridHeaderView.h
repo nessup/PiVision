@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class AsyncImageView;
+
 @interface PVGridHeaderView : UICollectionReusableView
 @property (nonatomic, strong) UILabel *label;
+@property (nonatomic, strong) AsyncImageView *imageView;
 @end

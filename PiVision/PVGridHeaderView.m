@@ -8,6 +8,8 @@
 
 #import "PVGridHeaderView.h"
 
+#import "AsyncImageView.h"
+
 @implementation PVGridHeaderView
 
 - (id)initWithFrame:(CGRect)frame {
@@ -16,6 +18,10 @@
         
         _label = [UILabel new];
         [self addSubview:_label];
+        
+//        _imageView = [AsyncImageView new];
+//        _imageView.contentMode = UIViewContentModeScaleAspectFit;
+//        [self addSubview:_imageView];
     }
     return self;
 }
