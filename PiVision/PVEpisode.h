@@ -13,6 +13,7 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *programName;
 @property (nonatomic, copy) NSString *channelNumber;
+@property (nonatomic, copy) NSString *episodeDescription;
 @property (nonatomic) NSTimeInterval startTime;
 @property (nonatomic) NSTimeInterval endTime;
 

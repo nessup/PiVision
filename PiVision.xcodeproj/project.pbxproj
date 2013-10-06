@@ -16,6 +16,7 @@
 		0217BE0A18015DDA0063EDA1 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 0217BDC218015DDA0063EDA1 /* ASIInputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		02B5B38318015F8E0060565C /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B5B38218015F8E0060565C /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		02B5B38518015FBC0060565C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B5B38418015FBC0060565C /* libz.dylib */; };
+		02B5B38B180169340060565C /* PVChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B5B38A180169340060565C /* PVChannel.m */; };
 		3BF71B2A1800978900A8FDFA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BF71B291800978900A8FDFA /* Foundation.framework */; };
 		3BF71B2C1800978900A8FDFA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BF71B2B1800978900A8FDFA /* CoreGraphics.framework */; };
 		3BF71B2E1800978900A8FDFA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BF71B2D1800978900A8FDFA /* UIKit.framework */; };
@@ -84,6 +85,8 @@
 		02B5B38118015F8E0060565C /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		02B5B38218015F8E0060565C /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		02B5B38418015FBC0060565C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		02B5B389180169340060565C /* PVChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVChannel.h; sourceTree = "<group>"; };
+		02B5B38A180169340060565C /* PVChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVChannel.m; sourceTree = "<group>"; };
 		3BF71B261800978900A8FDFA /* PiVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PiVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BF71B291800978900A8FDFA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3BF71B2B1800978900A8FDFA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -389,6 +392,8 @@
 		3BF71B981800E4F300A8FDFA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				02B5B389180169340060565C /* PVChannel.h */,
+				02B5B38A180169340060565C /* PVChannel.m */,
 				3BF71B951800E4DD00A8FDFA /* PVEpisode.h */,
 				3BF71B961800E4DD00A8FDFA /* PVEpisode.m */,
 			);
@@ -526,6 +531,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02B5B38B180169340060565C /* PVChannel.m in Sources */,
 				3BF71B3A1800978900A8FDFA /* PVAppDelegate.m in Sources */,
 				3BF71BA21800F2E100A8FDFA /* PVEpisodeGridLayout.m in Sources */,
 				3BF71B8C1800D89500A8FDFA /* PVRecentEpisodesViewController.m in Sources */,
