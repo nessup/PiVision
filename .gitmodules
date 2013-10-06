@@ -1,3 +1,6 @@
 [submodule "AsyncImageView"]
 	path = AsyncImageView
 	url = https://github.com/nicklockwood/AsyncImageView.git
+[submodule "ASIHTTPRequest"]
+	path = ASIHTTPRequest
+	url = git://github.com/pokeb/asi-http-request.git
