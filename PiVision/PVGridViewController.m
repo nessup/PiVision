@@ -138,11 +138,13 @@
     
     // This is inefficient -- we should be using a for loop here.
     for (NSArray *episodes in self.channels) {
+        NSInteger channelIndex = [self.channels indexOfObject:episodes];
+        
         for (PVEpisode *episode in episodes) {
-            if (episode.channel < minChannel)
+            if (channelIndex < minChannel)
                 continue;
             
-            if (episode.channel > maxChannel)
+            if (channelIndex > maxChannel)
                 continue;
             
             if (episode.indexedStartTime < minStartTime)
@@ -151,7 +153,7 @@
             if (episode.indexedEndTime > maxEndTime)
                 continue;
             
-            [indexPaths addObject:[NSIndexPath indexPathForItem:[episodes indexOfObject:episode] inSection:episode.channel]];
+            [indexPaths addObject:[NSIndexPath indexPathForItem:[episodes indexOfObject:episode] inSection:channelIndex]];
         }
     }
     
