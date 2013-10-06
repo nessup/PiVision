@@ -25,10 +25,6 @@ static PVRoviManager *_sharedRoviManager;
 
 @implementation PVRoviManager
 
-/*+ (NSArray *)allProgramsInTheNext30Minutes {
-    
-}*/
-
 + (instancetype)sharedManager {
     if (!_sharedRoviManager) {
         _sharedRoviManager = [[self alloc] init];
