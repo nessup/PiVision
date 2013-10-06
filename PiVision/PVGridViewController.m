@@ -102,9 +102,12 @@
             headerView.label.textAlignment = NSTextAlignmentCenter;
         }
         else {
-            NSInteger hour = (indexPath.item) % 12;
+            NSInteger hour = (indexPath.item - 1) % 12;
+            if (hour == 0) {
+                hour = 12;
+            }
             NSString *amPm = nil;
-            if (indexPath.item > 11) {
+            if (indexPath.item >= 12) {
                 amPm = @"pm";
             }
             else {
@@ -146,10 +149,10 @@
             if (episode.channel > maxChannel)
                 continue;
             
-            if (episode.startTime < minStartTime)
+            if (episode.indexedStartTime < minStartTime)
                 continue;
             
-            if (episode.endTime > maxEndTime)
+            if (episode.indexedEndTime > maxEndTime)
                 continue;
             
             [indexPaths addObject:[NSIndexPath indexPathForItem:[episodes indexOfObject:episode] inSection:episode.channel]];

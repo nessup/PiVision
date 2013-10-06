@@ -8,6 +8,9 @@
 
 #import "PVRecentEpisodesViewController.h"
 
+#import "PVEpisodeViewController.h"
+#import "PVEpisode.h"
+
 @implementation PVRecentEpisodesViewController
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -26,6 +29,12 @@
     cell.imageView.image = [UIImage imageNamed:@"new"];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    PVEpisodeViewController *controller = [PVEpisodeViewController new];
+    controller.episode = [PVEpisode generateTestEpisode];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 @end

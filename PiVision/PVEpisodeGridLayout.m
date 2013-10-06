@@ -162,7 +162,7 @@
 - (CGRect)frameForEpisode:(PVEpisode *)episode
 {
     CGRect frame = CGRectZero;
-    frame.origin.x = WidthPerHour + episode.startTime * (PVGridViewControllerDayWidth / SecondsPerDay);
+    frame.origin.x = WidthPerHour + episode.indexedStartTime * (PVGridViewControllerDayWidth / SecondsPerDay);
     frame.origin.y = PVGridViewControllerDayHeight + episode.channel * PVGridViewControllerDayHeight;
     frame.size.width = (episode.endTime - episode.startTime) * (PVGridViewControllerDayWidth / SecondsPerDay);
     frame.size.height = PVGridViewControllerDayHeight;
