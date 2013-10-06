@@ -99,6 +99,7 @@ static PVRoviManager *_sharedRoviManager;
                 
                 for (NSDictionary *airing in airings) {
                     PVEpisode *episode = [[PVEpisode alloc] init];
+                    episode.id = airing[@"ProgramId"];
                     episode.title = airing[@"EpisodeTitle"];
                     episode.programName = airing[@"Title"];
                     episode.channelNumber = channel.channelNumber;
