@@ -21,6 +21,8 @@ static PVRoviManager *_sharedRoviManager;
 
 @property (nonatomic, strong) NSArray *channels;
 
+@property (nonatomic, strong) NSDateFormatter *dateFormatter;
+
 @end
 
 @implementation PVRoviManager
@@ -36,11 +38,17 @@ static PVRoviManager *_sharedRoviManager;
 }
 
 - (void)fetchTVListings {
+    NSDate *date = [NSDate date];
+    // Include listings from the recent past.
+    NSDate *lastHalfHour = [NSDate dateWithTimeIntervalSinceReferenceDate:[date timeIntervalSinceReferenceDate] - 30 * 60];
+    NSString *startDate = [self.dateFormatter stringFromDate:lastHalfHour];
+    
     NSDictionary *arguments = @{@"locale": @"en-US",
                                 @"duration": @240,
                                 @"inprogress": @"false",
                                 @"oneairingpersourceid": @"false",
-                                @"apikey": kPVRoviTVListingsAPIKey};
+                                @"apikey": kPVRoviTVListingsAPIKey,
+                                @"startdate": startDate};
     NSString *queryString = [self queryStringWithQueryDictionary:arguments];
     
     NSString *URLString = [NSString stringWithFormat:@"http://api.rovicorp.com/TVlistings/v9/listings/gridschedule/%@/info?%@", kPVRoviServiceID, queryString];
@@ -49,6 +57,15 @@ static PVRoviManager *_sharedRoviManager;
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:APIURL];
     request.delegate = self;
     [request startAsynchronous];
+}
+
+- (NSDateFormatter *)dateFormatter {
+    if (!_dateFormatter) {
+        _dateFormatter = [[NSDateFormatter alloc] init];
+        [_dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
+    }
+    
+    return _dateFormatter;
 }
 
 #pragma mark - ASIHTTPRequestDelegate methods
@@ -87,9 +104,7 @@ static PVRoviManager *_sharedRoviManager;
                     episode.channelNumber = channel.channelNumber;
                     episode.channel = channel;
                     
-                    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-                    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZ"];
-                    NSDate *date = [dateFormatter dateFromString:airing[@"AiringTime"]];
+                    NSDate *date = [self.dateFormatter dateFromString:airing[@"AiringTime"]];
                     episode.startTime = [date timeIntervalSince1970];
                     
                     NSNumber *durationInMinutes = airing[@"Duration"];
