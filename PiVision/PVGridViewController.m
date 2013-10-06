@@ -135,9 +135,11 @@
             headerView.label.textAlignment = NSTextAlignmentLeft;
         }
     } else if ([kind isEqualToString:@"HourHeaderView"]) {
-        PVChannel *channel = [self.channels objectAtIndex:indexPath.section + 1];
+        PVChannel *channel = [self.channels objectAtIndex:indexPath.section];
         headerView.label.text = channel.displayName;
         headerView.label.textAlignment = NSTextAlignmentCenter;
+        headerView.subtitleLabel.text = [NSString stringWithFormat:@"Channel %@", channel.channelNumber];
+        headerView.subtitleLabel.textAlignment = NSTextAlignmentCenter;
     }
     return headerView;
 }
@@ -160,19 +162,11 @@
         NSInteger channelIndex = [self.channels indexOfObject:channel];
         
         for (PVEpisode *episode in channel.episodes) {
-            if (channelIndex < minChannel)
-                continue;
+            // supposed to consider min and max time... but can't figure it out, so we do this inefficient hack of ignoring it completely
+            if (channelIndex >= minChannel && channelIndex <= maxChannel) {
             
-            if (channelIndex > maxChannel)
-                continue;
-            
-            if (episode.indexedStartTime < minStartTime)
-                continue;
-            
-            if (episode.indexedEndTime > maxEndTime)
-                continue;
-            
-            [indexPaths addObject:[NSIndexPath indexPathForItem:[channel.episodes indexOfObject:episode] inSection:channelIndex]];
+                [indexPaths addObject:[NSIndexPath indexPathForItem:[channel.episodes indexOfObject:episode] inSection:channelIndex]];
+            }
         }
     }
     

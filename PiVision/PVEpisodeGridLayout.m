@@ -14,15 +14,16 @@
 #define SecondsPerDay                       (60.f*60.f*24.f)
 #define SecondsPerHour                      (60.f*60.f)
 #define PVGridViewControllerDayHeight       50.f
-#define PVGridViewControllerDayWidth        3000.f
+#define PVGridViewControllerDayWidth        4000.f
 #define PixelsPerSecond                     (PVGridViewControllerDayWidth / SecondsPerDay)
 #define WidthPerHour                        (SecondsPerHour * PixelsPerSecond)
+#define FirstColumnWidth                    WidthPerHour
 
 @implementation PVEpisodeGridLayout
 
 - (CGSize)collectionViewContentSize {
     return (CGSize) {
-        PVGridViewControllerDayWidth,
+        PVGridViewControllerDayWidth + FirstColumnWidth,
         self.collectionView.frame.size.height // * rows
     };
 }
@@ -77,7 +78,7 @@
         CGRect frame;
         
         if (indexPath.section == 0 && indexPath.item == 0) {
-            frame = CGRectMake(self.collectionView.contentOffset.x, self.collectionView.contentOffset.y + self.collectionView.contentInset.top, WidthPerHour, PVGridViewControllerDayHeight);
+            frame = CGRectMake(self.collectionView.contentOffset.x, self.collectionView.contentOffset.y + self.collectionView.contentInset.top, FirstColumnWidth, PVGridViewControllerDayHeight);
             attributes.zIndex = 20;
         }
         else {
@@ -86,7 +87,7 @@
         }
         attributes.frame = frame;
     } else if ([kind isEqualToString:@"HourHeaderView"]) {
-        CGRect frame = CGRectMake(self.collectionView.contentOffset.x, PVGridViewControllerDayHeight + PVGridViewControllerDayHeight * indexPath.section, WidthPerHour, PVGridViewControllerDayHeight);
+        CGRect frame = CGRectMake(self.collectionView.contentOffset.x, PVGridViewControllerDayHeight + PVGridViewControllerDayHeight * indexPath.section, FirstColumnWidth, PVGridViewControllerDayHeight);
         attributes.frame = frame;
         attributes.zIndex = 10;
     }
@@ -112,6 +113,8 @@
     NSInteger minStartTime = [self secondsFromXCoordinate:CGRectGetMinX(rect)];
     NSInteger maxEndTime = [self secondsFromXCoordinate:CGRectGetMaxX(rect)];
     
+//    NSLog(@"minStart = %d, maxEnd %d", minStartTime, maxEndTime);
+    
     id<PVEpisodeDataSource> dataSource = (id<PVEpisodeDataSource>)self.collectionView.dataSource;
     NSArray *indexPaths = [dataSource indexPathsOfEpisodesBetweenMinChannel:minChannel maxChannel:maxChannel minStartTime:minStartTime maxEndTime:maxEndTime];
     return indexPaths;
@@ -120,7 +123,8 @@
 - (NSInteger)secondsFromXCoordinate:(CGFloat)xPosition
 {
     CGFloat contentWidth = [self collectionViewContentSize].width;
-    return MAX(xPosition * (SecondsPerDay / contentWidth), 0);
+    NSLog(@"xpos = %f", xPosition);
+    return MAX((xPosition) * (SecondsPerDay / contentWidth), 0);
 }
 
 - (NSInteger)channelFromYCoordinate:(CGFloat)yPosition
@@ -162,7 +166,7 @@
 - (CGRect)frameForEpisode:(PVEpisode *)episode atIndexPath:(NSIndexPath *)indexPath
 {
     CGRect frame = CGRectZero;
-    frame.origin.x = WidthPerHour + episode.indexedStartTime * (PVGridViewControllerDayWidth / SecondsPerDay);
+    frame.origin.x = FirstColumnWidth + episode.indexedStartTime * (PVGridViewControllerDayWidth / SecondsPerDay);
     frame.origin.y = PVGridViewControllerDayHeight + indexPath.section * PVGridViewControllerDayHeight;
     frame.size.width = (episode.endTime - episode.startTime) * (PVGridViewControllerDayWidth / SecondsPerDay);
     frame.size.height = PVGridViewControllerDayHeight;
@@ -174,7 +178,8 @@
     NSDateComponents *hourComponents = [[[NSCalendar alloc]
                                         initWithCalendarIdentifier:NSGregorianCalendar] components:NSHourCalendarUnit fromDate:[NSDate date]];
     NSInteger hourInteger = [hourComponents hour];
-    return WidthPerHour + WidthPerHour * (hourInteger - 1);
+    CGFloat lol = FirstColumnWidth;
+    return FirstColumnWidth + WidthPerHour * (hourInteger - 1);
 }
 
 @end

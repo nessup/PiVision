@@ -12,5 +12,6 @@
 
 @interface PVGridHeaderView : UICollectionReusableView
 @property (nonatomic, strong) UILabel *label;
+@property (nonatomic, strong) UILabel *subtitleLabel;
 @property (nonatomic, strong) AsyncImageView *imageView;
 @end
