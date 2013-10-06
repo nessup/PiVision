@@ -18,7 +18,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         self.title = @"My Episodes";
-        self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemDownloads tag:0];
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"My Shows" image:[UIImage imageNamed:@"my-episodes"] tag:2];
     }
     return self;
 }
@@ -44,6 +44,5 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     return nil;
 }
-
 
 @end
