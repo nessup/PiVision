@@ -11,7 +11,7 @@
 #import "PVChannel.h"
 #import "PVEpisode.h"
 
-static NSString * const kPVRoviTVListingsAPIKey = @"39tptunjf5yx7rh3fam4jfbz";
+static NSString * const kPVRoviTVListingsAPIKey = @"vfrfzy5rwr85f3a8rh3esnkq";
 
 static NSString * const kPVRoviServiceID = @"20405";
 
